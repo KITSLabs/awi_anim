@@ -1,0 +1,77 @@
+﻿<Window x:Class="awi_system.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:HelixToolkit="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
+        xmlns:local="clr-namespace:awi_system"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="600"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="1200"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Orientation="Vertical">
+
+            <HelixToolkit:HelixViewport3D x:Name="viewPort3d" ShowFrameRate="True" ShowCameraInfo="True" Grid.Row="1" Grid.Column="1" Height="600" Width="1200">
+                <!-- Showing Drawing Cube, Camera Info, Frame Rate -->
+                <HelixToolkit:HelixViewport3D.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF060A13" Offset="0"/>
+                        <GradientStop Color="#FF1D64FF" Offset="1"/>
+                    </LinearGradientBrush>
+                </HelixToolkit:HelixViewport3D.Background>
+                <!--Remember to add light to the scene-->
+                <HelixToolkit:GridLinesVisual3D Width="16000" Length="16000" Thickness="1.5" MinorDistance="100" MajorDistance="400" Fill="#E5CFCECE" />
+                <HelixToolkit:DefaultLights/>
+            </HelixToolkit:HelixViewport3D>
+        </StackPanel>
+
+        <!--<StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Orientation="Vertical">
+            <Rectangle Fill="#FFFBFBFB" HorizontalAlignment="Left" Height="175" Stroke="Black" VerticalAlignment="Top" Width="306" StrokeThickness="0.5" Margin="-600,125,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Orientation="Vertical">
+            <Label Content="Gradient Messages:" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Width="300" Foreground="Black" FontSize="14" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="Movements:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="100" Foreground="Black" FontSize="14" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="MoveVal" Content="0.0" HorizontalAlignment="Left" Margin="65,-30,0,0" VerticalAlignment="Top" Width="100" Foreground="Black" FontSize="14" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="Distance:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75" Foreground="Black" FontSize="14" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="DistVal" Content="0.0" HorizontalAlignment="Left" Margin="65,-30,0,0" VerticalAlignment="Top" Width="100" Foreground="Black" FontSize="14" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="Sliding Distance:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="125" Foreground="Black" FontSize="14" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="SlidingDist" Content="0.0" HorizontalAlignment="Left" Margin="100,-30,0,0" VerticalAlignment="Top" Width="100" Foreground="Black" FontSize="14" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="Robot Stretched Arm Length:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="200" Foreground="Black" FontSize="14" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="RSAL" Content="0.0" HorizontalAlignment="Left" Margin="175,-30,0,0" VerticalAlignment="Top" Width="100" Foreground="Black" FontSize="14" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        </StackPanel>-->
+
+        <!--<StackPanel Grid.ColumnSpan="3" Grid.Row="0" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button x:Name="button" Content="Start" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="100" Height="50" FontSize="25" Click="StartInverseKinematics"/>
+            <Button x:Name="button2" Content="Back to Initial Position" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="250" Height="50" FontSize="25" Click="BackToInit"/>
+            <Button x:Name="button3" Content="Hide Sphere" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="250" Height="50" FontSize="25" Click="hideSphere"/>
+            <Button x:Name="button4" Content="Show Sphere" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="250" Height="50" FontSize="25" Click="showSphere"/>
+        </StackPanel>-->
+
+        <!--<StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Orientation="Vertical">
+            <Rectangle Fill="#FFFBFBFB" HorizontalAlignment="Left" Height="125" Stroke="Black" VerticalAlignment="Top" Width="306" StrokeThickness="0.5" Margin="-600,325,0,0"/>
+        </StackPanel>-->
+        <!--<StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Orientation="Vertical">
+            <Label Content="Box Position" HorizontalAlignment="Left" Margin="0,325,0,0" VerticalAlignment="Top" Width="100" Foreground="Black" FontSize="14" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="X" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="30" Foreground="Black" FontSize="14" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Slider x:Name="xPos" HorizontalAlignment="Left" Margin="25,-22,0,0" VerticalAlignment="Top" Width="210"  Maximum="600" Minimum="-600" ValueChanged="box_pos_changed" LargeChange="1" TickFrequency="1" Height="22"/>
+            <Label x:Name="xPosValue" HorizontalAlignment="Left" Margin="250,-25,0,0"  VerticalAlignment="Top" Width="50" Foreground="Black" FontSize="10" Content="{Binding Value, ElementName=xPos}" Height="22" ContentStringFormat="{}{0:0.##}" VerticalContentAlignment="Center"/>
+            <Label Content="Y" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="30" Foreground="Black" FontSize="14" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Slider x:Name="yPos" HorizontalAlignment="Left" Margin="25,-22,0,0" VerticalAlignment="Top" Width="210" Maximum="600" Minimum="-600" ValueChanged="box_pos_changed" LargeChange="1" TickFrequency="1" Height="22"/>
+            <Label x:Name="yPosValue" HorizontalAlignment="Left" Margin="250,-25,0,0"  VerticalAlignment="Top" Width="50" Foreground="Black" FontSize="10" Content="{Binding Value, ElementName=yPos}" Height="22" ContentStringFormat="{}{0:0.##}" VerticalContentAlignment="Center"/>
+            <Label Content="Z" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="30" Foreground="Black" FontSize="14" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Slider x:Name="zPos" HorizontalAlignment="Left" Margin="25,-22,0,0" VerticalAlignment="Top" Width="210" Maximum="870" Minimum="545.5" ValueChanged="box_pos_changed" LargeChange="1" TickFrequency="1" Height="22" Value="545.5"/>
+            <Label x:Name="zPosValue" HorizontalAlignment="Left" Margin="250,-25,0,0"  VerticalAlignment="Top" Width="50" Foreground="Black" FontSize="10" Content="{Binding Value, ElementName=zPos}" Height="22" ContentStringFormat="{}{0:0.##}" VerticalContentAlignment="Center"/>
+        </StackPanel>-->
+    </Grid>
+</Window>

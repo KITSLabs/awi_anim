@@ -1,32 +1,32 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
+*.suo
+*.vsidx
+*.vsidx
+*.application
 *.exe
-*.out
-*.app
+*.manifest
+*.pdb
+*.baml
+*.cache
+*.baml
+*.cache
+*.cache
+*.lref
+*.application
+*.cache
+*.cache
+*.txt
+*.cache
+*.exe
+*.manifest
+*.pdb
+*.cache
+*.lref
+
+.vs/
+bin/x64/Debug/
+bin/x64/Obj/
+bin/x64/Release/
+obj/
+bin/Debug/
+obj/x64/Debug/
+obj/Debug/
